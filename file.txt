@@ -1,0 +1,29 @@
+export class CreateProgramDto {
+    @IsString()
+    @IsNotEmpty()
+    name : string
+
+    @IsNumber()
+    @IsNotEmpty()
+    cost : number
+
+    @IsEnum(EDU_LEVEL)
+    @IsNotEmpty()
+    edu_level : EDU_LEVEL
+
+    @IsDateString()
+    @IsNotEmpty()
+    deadline : Date
+
+    @IsNumber()
+    @IsNotEmpty()
+    semester_id : number
+
+    @IsNumber()
+    @IsNotEmpty()
+    major_id : number
+
+    @IsNotEmpty()
+    @IsNumber()
+    university_id : number
+}
