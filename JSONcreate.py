@@ -16,7 +16,7 @@ for i in range(len(file_data)):
     data = file_data[i]
     if (len(data) > 0):
         string = data[0]
-        string = string[:len(string)]
+        string = string[:len(string) - 1]
         if(i == (len(file_data) - 1)):
             print("\"%s\""% string, ":")
         else:

@@ -1,29 +1,13 @@
-export class CreateProgramDto {
-    @IsString()
-    @IsNotEmpty()
-    name : string
+export class CreateConsultFormDto {
+  @IsNumber({}, { message: 'سن را صحیح وارد کنید' })
+  @IsNotEmpty({ message: 'سن نمی تواند خالی باشد' })
+  age: number;
 
-    @IsNumber()
-    @IsNotEmpty()
-    cost : number
+  @IsPhoneNumber('IR', { message: ' شماره تلفن را صحیح وارد کنید' })
+  @IsNotEmpty({ message: 'شماره تلفن نمی تواند خالی باشد' })
+  phone_number: string;
 
-    @IsEnum(EDU_LEVEL)
-    @IsNotEmpty()
-    edu_level : EDU_LEVEL
-
-    @IsDateString()
-    @IsNotEmpty()
-    deadline : Date
-
-    @IsNumber()
-    @IsNotEmpty()
-    semester_id : number
-
-    @IsNumber()
-    @IsNotEmpty()
-    major_id : number
-
-    @IsNotEmpty()
-    @IsNumber()
-    university_id : number
+  @IsEnum(EDU_LEVEL, { message: 'تحصیلات را درست وارد کنید. ' })
+  @IsNotEmpty({ message: 'تحصیلات نمی تواند خالی باشد' })
+  edu_level: EDU_LEVEL;
 }
